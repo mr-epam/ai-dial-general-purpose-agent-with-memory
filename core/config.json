@@ -4,7 +4,7 @@
     "general-purpose-agent-with-memory": {
       "displayName": "General Purpose Agent",
       "description": "General Purpose Agent. Equipped with: WEB search (DuckDuckGo via MCP), RAG search (supports PDF, TXT, CSV files), Python Code Interpreter (via MCP), Image Generation (model).",
-      "endpoint": "http://host.docker.internal:5030/openai/deployments/general-purpose-agent/chat/completions",
+      "endpoint": "http://host.docker.internal:5030/openai/deployments/general-purpose-agent-with-memory/chat/completions",
       "inputAttachmentTypes": [
         "image/png",
         "image/jpeg",
