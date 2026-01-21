@@ -1,7 +1,7 @@
 {
   "routes": {},
   "applications": {
-    "general-purpose-agent": {
+    "general-purpose-agent-with-memory": {
       "displayName": "General Purpose Agent",
       "description": "General Purpose Agent. Equipped with: WEB search (DuckDuckGo via MCP), RAG search (supports PDF, TXT, CSV files), Python Code Interpreter (via MCP), Image Generation (model).",
       "endpoint": "http://host.docker.internal:5030/openai/deployments/general-purpose-agent/chat/completions",
@@ -38,6 +38,18 @@
         {
           "endpoint": "https://ai-proxy.lab.epam.com/openai/deployments/claude-3-7-sonnet@20250219/chat/completions",
           "key": "{YOUR_DIAL_API_KEY}"
+        }
+      ]
+    },
+    "claude-sonnet-4": {
+      "displayName": "Claude Sonnet 4",
+      "endpoint": "http://adapter-dial:5000/openai/deployments/claude-sonnet-4/chat/completions",
+      "iconUrl": "https://chat.lab.epam.com/themes/anthropic.svg",
+      "type": "chat",
+      "upstreams": [
+        {
+          "endpoint": "https://ai-proxy.lab.epam.com/openai/deployments/claude-sonnet-4@20250514/chat/completions",
+          "key": "{REPLACE_WITH_YOUR_DIAL_API_KEY}"
         }
       ]
     },

@@ -60,8 +60,10 @@ class GeneralPurposeAgentApplication(ChatCompletion):
                 dial_endpoint=DIAL_ENDPOINT
             ),
 
-            #TODO:
-            # Add tools with Long-term memory capabilities
+            # Long-term memory tools
+            StoreMemoryTool(memory_store=self.memory_store),
+            SearchMemoryTool(memory_store=self.memory_store),
+            DeleteMemoryTool(memory_store=self.memory_store),
         ]
 
         tools.extend(await self._get_mcp_tools("http://localhost:8051/mcp"))
@@ -88,7 +90,7 @@ class GeneralPurposeAgentApplication(ChatCompletion):
 
 app: DIALApp = DIALApp()
 agent_app = GeneralPurposeAgentApplication()
-app.add_chat_completion(deployment_name="general-purpose-agent", impl=agent_app)
+app.add_chat_completion(deployment_name="general-purpose-agent-with-memory", impl=agent_app)
 
 if __name__ == "__main__":
     import uvicorn
